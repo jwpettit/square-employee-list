@@ -1,7 +1,9 @@
 import Table from "react-bootstrap/Table";
+import Container from "react-bootstrap/Container";
 
 export default function List({ employees }) {
     return (
+        <Container>
         <Table>
             <thead>
                 <tr>
@@ -27,5 +29,6 @@ export default function List({ employees }) {
                     })}
             </tbody>
         </Table>
+        </Container>
     );
 }
