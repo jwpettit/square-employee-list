@@ -1,8 +1,8 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './Layout'
+import List from './Components/List';
 
 export default function App() {
   const [employees, setEmployees] = useState([])
@@ -31,6 +31,7 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<List />} />
           <Route path="employee/" />
         </Route>
       </Routes>
