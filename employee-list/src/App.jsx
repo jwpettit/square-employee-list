@@ -31,6 +31,7 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="employee/" />
         </Route>
       </Routes>
     </div>
