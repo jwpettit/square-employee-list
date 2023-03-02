@@ -6,7 +6,7 @@ export default function Navigation({ getData }) {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand>Square Employee Directory</Navbar.Brand>
+                <Navbar.Brand href="/" >Square Employee Directory</Navbar.Brand>
                 <Navbar.Collapse className="justify-content-end">
                     <Button
                         variant="warning"
