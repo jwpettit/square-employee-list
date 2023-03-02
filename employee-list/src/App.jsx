@@ -31,8 +31,8 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<List />} />
-          <Route path="employee/" />
+          <Route index element={<List employees={employees} />} />
+          {/* <Route path="employee/" /> */}
         </Route>
       </Routes>
     </div>
