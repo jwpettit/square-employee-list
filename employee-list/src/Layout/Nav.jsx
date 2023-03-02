@@ -1,11 +1,11 @@
-// import Nav from 'react-bootstrap/Nav';
-import { Navbar, Container } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 export default function Navigation() {
     return (
-        <Navbar>
+        <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand>XYZ Company Employees</Navbar.Brand>
+                <Navbar.Brand>Square Employee Directory</Navbar.Brand>
             </Container>
         </Navbar>
     );
