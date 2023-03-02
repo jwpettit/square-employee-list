@@ -8,20 +8,19 @@ export default function App() {
   const [employees, setEmployees] = useState([])
   const [loadedEmployees, setLoadedEmployees] = useState(false)
 
-  useEffect(() => {
-    const getData = async () => {
-      let url = "https://s3.amazonaws.com/sq-mobile-interview/employees.json";
-      const response = await fetch(url);
-
-      if (response.ok) {
-        let data = await response.json();
-        setEmployees(data.employees);
-      } else {
-        console.error('Error searching for employees |', response)
-      }
-      setLoadedEmployees(true);
+  const getData = async () => {
+    let url = "https://s3.amazonaws.com/sq-mobile-interview/employees.json";
+    const response = await fetch(url);
+    if (response.ok) {
+      let data = await response.json();
+      setEmployees(data.employees);
+    } else {
+      console.error('Error searching for employees |', response)
     }
+    setLoadedEmployees(true);
+  }
 
+  useEffect(() => {
     if (loadedEmployees === false) {
       getData();
     }
@@ -30,7 +29,7 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout getData={getData} />}>
           <Route index element={<List employees={employees} />} />
           {/* <Route path="employee/" /> */}
         </Route>
